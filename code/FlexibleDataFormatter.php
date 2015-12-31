@@ -51,7 +51,6 @@ abstract class FlexibleDataFormatter
         }
 
         if ($obj instanceof FlexibleDataFormatterInterface) {
-
             foreach ($obj->getAllowedHasOneRelations($config) as $relName) {
                 if ($obj->{$relName . 'ID'}) {
                     $content[$relName] = $this->convertDataObjectToArray($obj->$relName(), $config);
@@ -77,7 +76,6 @@ abstract class FlexibleDataFormatter
                     }
                 }
             }
-
         }
 
         return $content;
